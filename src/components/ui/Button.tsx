@@ -36,19 +36,17 @@ interface ButtonProps
 }
 
 const Button: FC<ButtonProps> = forwardRef<HTMLButtonElement, ButtonProps>(
-  ({className, children, variant, isLoading, size, ...props}, ref) => {
-    return (
-      <button
-        ref={ref}
-        className={cn(buttonVariants({variant, size, className}))}
-        disabled={isLoading}
-        {...props}
-      >
-        {isLoading ? <Loader2 className='mr-2 h-4 w-4 animate-spin' /> : null}
-        {children}
-      </button>
-    )
-  }
+  ({className, children, variant, isLoading, size, ...props}, ref) => (
+    <button
+      ref={ref}
+      className={cn(buttonVariants({variant, size, className}))}
+      disabled={isLoading}
+      {...props}
+    >
+      {isLoading ? <Loader2 className='mr-2 h-4 w-4 animate-spin' /> : null}
+      {children}
+    </button>
+  )
 )
 
 Button.displayName = 'Button'

@@ -22,17 +22,15 @@ interface ParagraphProps
     VariantProps<typeof paragraphVariants> {}
 
 const Paragraph = forwardRef<HTMLParagraphElement, ParagraphProps>(
-  ({className, size, children, ...props}, ref) => {
-    return (
-      <p
-        ref={ref}
-        {...props}
-        className={cn(paragraphVariants({size, className}))}
-      >
-        {children}
-      </p>
-    )
-  }
+  ({className, size, children, ...props}, ref) => (
+    <p
+      ref={ref}
+      {...props}
+      className={cn(paragraphVariants({size, className}))}
+    >
+      {children}
+    </p>
+  )
 )
 
 Paragraph.displayName = 'Paragraph'
