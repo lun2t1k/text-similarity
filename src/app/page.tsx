@@ -38,6 +38,7 @@ const Home = () => (
             quality={100}
             style={{objectFit: 'contain'}}
             fill
+            sizes='100%'
             src='/typewriter.png'
             alt='Typewriter'
           />

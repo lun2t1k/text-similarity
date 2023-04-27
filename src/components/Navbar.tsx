@@ -4,9 +4,10 @@ import SignInButton from '@/components/SignInButton'
 import SignOutButton from '@/components/SignOutButton'
 import ThemeToggle from '@/components/ThemeToggle'
 import {buttonVariants} from '@/ui/Button'
+import { authOptions } from '@/lib/auth'
 
 const Navbar = async (): Promise<JSX.Element> => {
-  const session = await getServerSession()
+  const session = await getServerSession(authOptions)
 
   return (
     <nav className='fixed backdrop-blur-sm bg-white/75 dark:bg-slate-900 z-50 top-0 left-0 right-0 border-b border-slate-300 dark:border-slate-700 shadow-sm flex items-center justify-between py-2'>
