@@ -63,14 +63,13 @@ model ApiKey {
 }
 
 model ApiRequest {
-  id        String   @id @default(cuid())
-  timestamp DateTime @default(now())
-  method    String
-  path      String
-  status    Int
-  duration  Int
-
-  userApiKey String
+  id         String   @id @default(cuid())
+  timestamp  DateTime @default(now())
+  method     String
+  path       String
+  status     Int
+  duration   Int
+  usedApiKey String
 
   ApiKey ApiKey @relation(fields: [apiKeyId], references: [id])
   apiKeyId String
